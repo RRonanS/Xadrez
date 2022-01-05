@@ -1,0 +1,2 @@
+Jogadores:
+    Nome, jogos, vitorias , empates
