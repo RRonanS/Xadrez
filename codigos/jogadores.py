@@ -34,7 +34,8 @@ class jogador():
     def importar(self):
         nome = self.nome
         achou = False
-        with open('../armazenamento/jogadores.txt', 'r') as arquivo:
+        linha = ''
+        with open('armazenamento/jogadores.txt', 'r') as arquivo:
             linhas = arquivo.readlines()[1::]
             cont = 0
             for item in linhas:
@@ -62,11 +63,12 @@ class jogador():
         vitorias = str(self.qnt_vitorias)
         jogos = str(self.qnt_jogos)
         empates = str(self.qnt_empates)
+        linhas = []
         if nome != '--OrderToDelete--':
             linha_jogador = '    ' + nome + ', ' + jogos + ', ' + vitorias + ', ' + empates
         else: linha_jogador = ''
         colocou = False
-        with open('../armazenamento/jogadores.txt', 'r') as arquivo:
+        with open('armazenamento/jogadores.txt', 'r') as arquivo:
             linhas = arquivo.readlines()[2::]
         cont = 0
         for x in linhas:
@@ -77,7 +79,7 @@ class jogador():
             else: linhas[cont] = x
             cont += 1
         if not colocou: linhas.append(linha_jogador)
-        with open('../armazenamento/jogadores.txt', 'w') as arq:
+        with open('armazenamento/jogadores.txt', 'w') as arq:
             arq.write('Jogadores:\n')
             arq.write('    Nome, jogos, vitorias , empates\n')
             for item in linhas:

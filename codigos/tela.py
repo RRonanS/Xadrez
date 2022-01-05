@@ -891,7 +891,7 @@ class tela():
                     vencedor = 'pretas'
                 else:
                     nome = 'preto'
-                    vencedor = brancas
+                    vencedor = 'brancas'
                 sg.Popup('Fim de jogo!\n', 'O rei', nome, 'recebeu xeque mate'
                          , text_color='black')
                 print('[Sistema] fim de jogo, rei capturado')

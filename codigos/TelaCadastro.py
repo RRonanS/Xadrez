@@ -40,9 +40,10 @@ class telacadastro():
         if len(nome1) < 3 or len(nome2) < 3:
             valido = False
         if valido:
-            from jogadores import jogador
+            from codigos.jogadores import jogador
             jogador1 = jogador(nome1)
             jogador2 = jogador(nome2)
+            print('instanciado')
             if vencedor == 'brancas':
                 jogador1.vitoria()
                 jogador2.derrota()
@@ -52,8 +53,10 @@ class telacadastro():
             elif vencedor == 'empate':
                 jogador1.empate()
                 jogador2.empate()
+            print('exportando')
             jogador1.exportar()
             jogador2.exportar()
+            print('exportado')
             return True
         else:
             return False
@@ -82,3 +85,4 @@ class telacadastro():
                 elif evento == 'nome2input':
                     entrada = valores['nome2input'].replace('nome', '')
                     window.Element('nome2input').update(entrada)
+        window.close()
